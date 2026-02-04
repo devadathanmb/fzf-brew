@@ -1,6 +1,11 @@
 # fzf-brew (fish)
 
-A [fish](https://fishshell.com)-native rewrite of the [`fzf-brew`](https://github.com/thirteen37/fzf-brew) Zsh plugin. It provides fast, fuzzy install/uninstall helpers for Homebrew formulae and casks, with previews and a homepage opener.
+A [fish](https://fishshell.com)-native rewrite of the [fzf-brew](https://github.com/thirteen37/fzf-brew) Zsh plugin. It provides fast, fuzzy install/uninstall helpers for Homebrew formulae and casks, with previews and a homepage opener.
+
+## Screenshots
+<img width="1470" height="956" alt="Screenshot 2026-02-04 at 19 39 02" src="https://github.com/user-attachments/assets/78a61b62-360f-4f3d-821d-1b6c171b78bc" />
+<img width="1470" height="956" alt="Screenshot 2026-02-04 at 19 38 39" src="https://github.com/user-attachments/assets/936a2481-63db-4eea-b00f-04c8a3312f4d" />
+
 
 ## Requirements
 
