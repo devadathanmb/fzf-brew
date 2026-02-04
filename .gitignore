@@ -1,0 +1,15 @@
+# Temporary test files
+tests/tmp/
+
+# macOS
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Fish local config
+fish_variables

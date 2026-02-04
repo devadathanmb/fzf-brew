@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+#
+# fzf-brew test stub: brew command
+#
+# This stub intercepts brew commands during tests and:
+#   1. Logs all invocations to BREW_STUB_LOG
+#   2. Returns mock data for specific commands
+#
+# Used by: tests/run.fish
+
+log="${BREW_STUB_LOG:-/dev/null}"
+
+# Record every invocation for test assertions
+printf '%s\n' "brew $*" >> "$log"
+
+case "$1" in
+  formulae)
+    # Mock output: available formulae
+    printf '%s\n' "fzf" "ripgrep"
+    ;;
+  casks)
+    # Mock output: available casks
+    printf '%s\n' "iterm2" "visual-studio-code"
+    ;;
+  leaves)
+    # Mock output: installed formulae (not deps of others)
+    printf '%s\n' "fzf" "ripgrep"
+    ;;
+  list)
+    shift
+    if [ "$1" = "--cask" ]; then
+      # Mock output: installed casks
+      printf '%s\n' "iterm2"
+    fi
+    ;;
+  info)
+    # Mock output: brew info (homepage URL)
+    if [ "$1" = "--cask" ]; then
+      shift
+    fi
+    printf '%s\n' "https://example.com/$1"
+    ;;
+  install|uninstall|home)
+    # These commands just get logged, no output needed
+    ;;
+  *)
+    ;;
+esac
+
+exit 0

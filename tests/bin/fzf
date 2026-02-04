@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+#
+# fzf-brew test stub: fzf command
+#
+# This stub intercepts fzf during tests and:
+#   1. Logs all arguments to FZF_STUB_ARGS_PATH
+#   2. Outputs FZF_STUB_OUTPUT (set by test)
+#   3. Returns FZF_STUB_EXIT code (0=success, 130=cancelled)
+#
+# Used by: tests/run.fish
+
+args_log="${FZF_STUB_ARGS_PATH:-/dev/null}"
+
+# Capture args for assertions (one per line)
+for arg in "$@"; do
+  printf '%s\n' "$arg" >> "$args_log"
+done
+
+if [ -n "${FZF_STUB_OUTPUT:-}" ]; then
+  # Interpret backslash escapes so tests can pass \n for multiple lines
+  printf '%b\n' "$FZF_STUB_OUTPUT"
+fi
+
+exit ${FZF_STUB_EXIT:-0}

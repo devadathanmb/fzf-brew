@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+#
+# fzf-brew test stub: open command
+#
+# This stub intercepts the `open` command during tests.
+# Currently unused (we use `brew home` for opening homepages),
+# but kept for potential future use.
+#
+# Stub behavior: Logs invocation and exits successfully.
+
+log="${OPEN_STUB_LOG:-/dev/null}"
+printf '%s\n' "open $*" >> "$log"
