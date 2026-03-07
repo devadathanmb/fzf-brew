@@ -2,6 +2,18 @@
 
 A [fish](https://fishshell.com)-native rewrite of the [fzf-brew](https://github.com/thirteen37/fzf-brew) Zsh plugin. It provides fast, fuzzy install/uninstall helpers for Homebrew formulae and casks, with previews and a homepage opener.
 
+## Contents
+
+* [Screenshots](#screenshots)
+* [Requirements](#requirements)
+* [Install](#install)
+* [Usage](#usage)
+* [Configuration](#configuration)
+* [Development](#development)
+  * [Local Testing](#local-testing)
+  * [Tests](#tests)
+* [License](#license)
+
 ## Screenshots
 <img width="3024" height="1964" alt="image" src="https://github.com/user-attachments/assets/8ff2b837-760a-4536-b2b5-201c3f3e7aa7" />
 <img width="3024" height="1964" alt="image" src="https://github.com/user-attachments/assets/aa89de95-2d6f-4016-9c83-6a08f0e9768d" />
@@ -66,15 +78,9 @@ You can customize those using standard `fzf` mechanisms, for example:
 
 This plugin simply forwards those options to `fzf` without redefining them.
 
-## Tests
-
-To run the test suite:
-
-```fish
-fish tests/run.fish
-```
-
 ## Development
+
+### Local Testing
 
 To test the plugin locally from this repo without installing it:
 
@@ -107,6 +113,14 @@ fbi
 fbui
 fci
 fcui
+```
+
+### Tests
+
+To run the test suite:
+
+```fish
+fish tests/run.fish
 ```
 
 ## License
