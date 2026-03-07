@@ -74,6 +74,41 @@ To run the test suite:
 fish tests/run.fish
 ```
 
+## Development
+
+To test the plugin locally from this repo without installing it:
+
+1. Clone the repository:
+
+```fish
+git clone https://github.com/devadathanmb/fzf-brew.git
+```
+
+2. Change into the repo:
+
+```fish
+cd fzf-brew
+```
+
+3. Source the functions from your working tree:
+
+```fish
+for f in functions/*.fish
+    set -l fn (string replace -r '\.fish$' '' -- (basename $f))
+    functions -e $fn 2>/dev/null
+    source $f
+end
+```
+
+Then run any of the plugin commands:
+
+```fish
+fbi
+fbui
+fci
+fcui
+```
+
 ## License
 
 [GPL v3](./LICENSE)
