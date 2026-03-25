@@ -122,6 +122,13 @@ else
     echo "ok - no selection does not run brew install"
 end
 
+# Test 5: Query pre-fill starting with a dash
+# fish 4.x requires `string join --` when joined values may start with `-`
+__reset_stubs
+set -gx FZF_STUB_OUTPUT "fzf"
+fbi --beta
+__assert_contains (__fzf_args) "--query --beta" "dash-prefixed query pre-fills fzf"
+
 # Summary
 if test $__failures -gt 0
     exit 1
